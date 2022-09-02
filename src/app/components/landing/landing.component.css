@@ -1,0 +1,17 @@
+.grid-container{
+    margin-top: 5em;
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3em;
+  }
+  
+  .todo-card{
+    text-align: center;
+    margin-left: 2em;
+    border-width: 0.1em;
+    border-style: solid;
+    border-radius: 0.5em;
+    width: 20em;
+    height: 15em;
+    background-color: gray;
+  }
