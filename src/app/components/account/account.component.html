@@ -1,9 +1,10 @@
-<app-navbar-menu></app-navbar-menu>
-<app-navbar-login></app-navbar-login>
+<app-navbar-homemenu></app-navbar-homemenu>
+<app-navbar-homeaccount></app-navbar-homeaccount>
+
 
 <head>
     <style></style>
-    <title>Signup Title</title>
+    <title>Account Title</title>
 </head>
 <div class="layout"></div>
 
@@ -11,11 +12,14 @@
     <br>
     <br>
     <br>
-    <h2>Signup Heading</h2>
+    <h2>Account Info Heading</h2>
     <p>
 
         sample text goes here. Sample fields below for signup.
+        sample update function below.
 
+        <br>
+        <br>
         <br>
         <input type="text"> First Name
         <br>
@@ -29,20 +33,27 @@
         <br>
         <input type="text"> Password
         <br>
-        <button type="button">Enter</button>
+    <div style="position:relative; left:130px; top: -10px;">
+        <button type="button">update</button>
         <!-- <input type="text" [(ngModel)]="newTodo">
     <button (click)="addTodo()">Add Todo to List</button> for later to connect to models-->
-
+    </div>
 
     <div></div>
     <br>
     <br>
     <br>
-    <h2>Login option 2</h2>
+    <h2>View Account option?? 2</h2>
     <p>
+        Sample text here. sample view all below
+        <br>
+        <br>
+        <br>
         <a class="button" routerLinkActive="active" routerLink="/login">
-            Login
+            Account details??
         </a>
+        <!-- <input type="text" [(ngModel)]="newTodo">
+    <button (click)="addTodo()">Add Todo to List</button> for later to connect to models-->
     </p>
 
 </body>
