@@ -1,48 +1,54 @@
 <app-navbar-menu></app-navbar-menu>
 <app-navbar-login></app-navbar-login>
+<br>
+<br>
 
-<head>
-    <style></style>
-    <title>Signup Title</title>
-</head>
-<div class="layout"></div>
+<form>
+    <!-- without this container, the fields spread all across the page-->
+    <div class="container">
+    <!-- the "col-xs-5" class limits the size of the input fields, the higher 
+    the number the longer the input field-->
+    <div class="form-group" class="col-xs-5">
+      <label for="InputUserName">{{placeHolder.userName}}</label>
+      <input type="userName" class="form-control" id="InputUserName" placeholder="Username">
+    </div>
+    <div class="form-group" class="col-xs-5">
+      <label for="InputFirstName">{{placeHolder.firstName}}</label>
+      <input type="firstName" class="form-control" id="InputFirstName" placeholder="First Name">
+    </div>
+    <div class="form-group" class="col-xs-5">
+      <label for="InputLastName">{{placeHolder.lastName}}</label>
+      <input type="lastName" class="form-control" id="InputLastName" placeholder="Last Name">
+    </div>
+    <div class="form-group" class="col-xs-5">
+      <label for="exampleInputEmail1">{{placeHolder.email}}</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    </div>
+    
+    <!--this is an example. originals are in the comment below-->
+    <div class="form-group" class="col-xs-5">
+        <label for="exampleInputPassword1">{{placeHolder.password}}</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="checkbox" class="col-xs-5">
+      <label>
+        <input type="checkbox"> Agree Terms and Conditions
+      </label>
+    </div>
+    <!--after submitting it will route the user to the home page-->
+    <div class="col-xs-5">
+    <button type="submit" class="btn btn-default" routerLinkActive="active" routerLink="/home">Submit</button>
+    </div>
+    </div>
+</form>
 
-<body>
-    <br>
-    <br>
-    <br>
-    <h2>Signup Heading</h2>
-    <p>
-
-        sample text goes here. Sample fields below for signup.
-
-        <br>
-        <input type="text"> First Name
-        <br>
-        <input type="text"> Last Name
-        <br>
-        <input type="text"> Email
-        <br>
-        <input type="text"> Phone
-        <br>
-        <input type="text"> Username
-        <br>
-        <input type="text"> Password
-        <br>
-        <button type="button">Enter</button>
-        <!-- <input type="text" [(ngModel)]="newTodo">
-    <button (click)="addTodo()">Add Todo to List</button> for later to connect to models-->
 
 
-    <div></div>
-    <br>
-    <br>
-    <br>
-    <h2>Login option 2</h2>
-    <p>
-        <a class="button" routerLinkActive="active" routerLink="/login">
-            Login
-        </a>
-    </p>
 
-</body>
+
+
+  
+<!-- <input type="text" [(ngModel)]="newTodo">
+    <button (click)="addTodo()">Add Todo to List</button> for later to connect to models
+</div>
+ -->

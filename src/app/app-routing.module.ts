@@ -1,62 +1,13 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingComponent } from './components/landing/landing.component';
-import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { HomepageComponent } from './components/homepage/homepage.component';
-import { FoodComponent } from './components/food/food.component';
-import { ExerciseComponent } from './components/exercise/exercise.component';
-import { AccountComponent } from './components/account/account.component';
-import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
-{
-  path: "landing",
-  component: LandingComponent
-},
-
-{
-  path: "login",
-  component: LoginComponent
-},
-
-{
-  path: "signup",
-  component: SignupComponent
-},
-
-{
-  path: "homepage",
-  component: HomepageComponent
-},
-
-{
-  path: "food",
-  component: FoodComponent
-},
-
-{
-  path: "exercise",
-  component: ExerciseComponent
-},
-
-{
-  path: "account",
-  component: AccountComponent
-},
-
-{
-  path: "about",
-  component: AboutComponent
-},
-
-{
-  path: '',
-  component: LandingComponent
-},
-
-
-
+  { //instead of placing selector into the app.html, we'll have the router take care 
+    //of this by swapping out components on this  array
+    path:"signup",
+    component: SignupComponent
+  }
 ];
 
 @NgModule({
