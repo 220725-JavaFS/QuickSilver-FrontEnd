@@ -15,6 +15,7 @@ import { FoodComponent } from './components/food/food.component';
 import { ExerciseComponent } from './components/exercise/exercise.component';
 import { AccountComponent } from './components/account/account.component';
 import { AboutComponent } from './components/about/about.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { AboutComponent } from './components/about/about.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
