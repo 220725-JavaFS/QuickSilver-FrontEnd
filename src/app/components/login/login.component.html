@@ -1,37 +1,35 @@
-<app-navbar-menu></app-navbar-menu>
-<app-navbar-login></app-navbar-login>
 
-<head>
-    <style></style>
-    <title>Login Title</title>
-</head>
+
 <div class="layout"></div>
+<!-- Unsure why this is here, did not remove, but I doubt It is needed (Nigel) -->
+
+<app-navbar-login></app-navbar-login>
+<app-navbar-menu></app-navbar-menu>
 
 <body>
     <br>
     <br>
     <br>
-    <h2>Login Heading</h2>
-    <p>
+    <!-- Kept these breaks, removed the others (Nigel) -->
         
-    <input type="text"> Username
-    <br>
-    <input type="text" > Password
-    <br>
-    <button type="button">Enter</button>
-    <!-- <input type="text" [(ngModel)]="newTodo">
-    <button (click)="addTodo()">Add Todo to List</button> for later to connect to models-->
+    <div class="login-box">
+        <h2 class="login-title">Member Login</h2>
+        <input type="text" class="input-box" placeholder="Username" required>
+            <pre></pre>
+            <!-- I'm not exactly sure what the 'pre' tag does, but it gives very good spacing I wanted to abuse (Nigel)-->
+        <input type="password" class="input-box" placeholder="Password" required> 
+         <pre></pre>
+        <button type="button" class="login-button">Login</button>
+        <!-- <input type="text" [(ngModel)]="newTodo">
+        <button (click)="addTodo()">Add Todo to List</button> for later to connect to models-->
+        <p>Don't have an account? Register here <a class="signin-button" routerLinkActive="active" routerLink="/signup"> Sign Up! </a> </p>
+        <!-- Set up anchor tag with a small button (Nigel) -->
+    </div>
 
 
     <div></div>
     <br>
     <br>
     <br>
-    <h2>signup option 2</h2>
-    <p>
-        <a class="button" routerLinkActive="active" routerLink="/signup">
-            Signup
-        </a>
-    </p>
     
 </body>
