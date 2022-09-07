@@ -1,35 +1,46 @@
-<app-navbar-menu></app-navbar-menu>
+
 <app-navbar-login></app-navbar-login>
 
 <head>
     <style></style>
     <title>Signup Title</title>
+    
 </head>
+
+<app-navbar-menu></app-navbar-menu>
 <div class="layout"></div>
 
+<h1 class="registration-statement">Get the most out of your workouts!</h1>
+
 <body>
-    <br>
-    <br>
-    <br>
-    <h2>Signup Heading</h2>
-    <p>
+    
+    <!-- All pieces of the 'sign up' box are contained here, Required marks the boxes are needed before moving on. (Nigel)-->
+        <div class="signup-box">
+            <h2>Member Registration</h2>
+            <br>
+             <input type="text" class="input-box" placeholder="First Name" required>
+            <pre></pre>
+  
+             <input type="text" class="input-box" placeholder="Last Name" required>
+            <pre></pre>
 
-        sample text goes here. Sample fields below for signup.
+             <input type="email" class="input-box" placeholder="Email" required> 
+            <pre></pre>
 
-        <br>
-        <input type="text"> First Name
-        <br>
-        <input type="text"> Last Name
-        <br>
-        <input type="text"> Email
-        <br>
-        <input type="text"> Phone
-        <br>
-        <input type="text"> Username
-        <br>
-        <input type="text"> Password
-        <br>
-        <button type="button">Enter</button>
+             <input type="text" class="input-box" placeholder="Phone"> 
+           <pre></pre>
+
+             <input type="text" class="input-box" placeholder="Username" required>
+            <pre></pre>
+
+             <input type="password" class="input-box" placeholder="Password" required> 
+            <br>
+            <br>
+        <button type="button" class="signup-button">Register</button>
+        <p>Already have an account?</p>
+        <p>If so, <a class="register-button" routerLinkActive="active" routerLink="/login">login instead!</a>
+            <!-- Once again, button is bound to small text rather than huge button (Nigel)-->
+        </div>
         <!-- <input type="text" [(ngModel)]="newTodo">
     <button (click)="addTodo()">Add Todo to List</button> for later to connect to models-->
 
@@ -38,11 +49,9 @@
     <br>
     <br>
     <br>
-    <h2>Login option 2</h2>
-    <p>
-        <a class="button" routerLinkActive="active" routerLink="/login">
-            Login
-        </a>
-    </p>
+
+    <div id="register-bottom"></div>
+    <!-- Trying to get the borders to reach the end of the screen (Nigel) -->
+
 
 </body>
