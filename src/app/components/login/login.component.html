@@ -13,18 +13,21 @@
     <!-- Kept these breaks, removed the others (Nigel) -->
         
     <div class="login-box">
+     <form>
         <h2 class="login-title">Member Login</h2>
-        <input type="text" class="input-box" placeholder="Username" required>
+        <input type="text" name="attemptUsername" [(ngModel)]="clientUsername" class="input-box" placeholder="Username" required>
             <pre></pre>
             <!-- I'm not exactly sure what the 'pre' tag does, but it gives very good spacing I wanted to abuse (Nigel)-->
-        <input type="password" class="input-box" placeholder="Password" required> 
+        <input type="password" name="attemptPassword" [(ngModel)]="clientPassword" class="input-box" placeholder="Password" required> 
          <pre></pre>
-        <button type="button" class="login-button">Login</button>
+        <button (click)="LoginUser()" class="login-button">Login</button>
         <!-- <input type="text" [(ngModel)]="newTodo">
         <button (click)="addTodo()">Add Todo to List</button> for later to connect to models-->
         <p>Don't have an account? Register here <a class="signin-button" routerLinkActive="active" routerLink="/signup"> Sign Up! </a> </p>
         <!-- Set up anchor tag with a small button (Nigel) -->
+    </form>
     </div>
+
 
 
     <div></div>

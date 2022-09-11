@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Account } from 'src/app/accountDTO';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  clientUsername: string = '';
+  clientPassword: string = '';
+  account:Account = <Account>{};
+
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-}
+  LoginUser(){
+      this.loginService.loginClient(this.clientUsername,this.clientPassword);
+      }
+    }
+      
+  export interface LoggedClientEvent{
+    username: string;
+    id: number;
+  }
+
+
