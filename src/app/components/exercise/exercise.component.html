@@ -13,10 +13,60 @@
     <br>
     <br>
     <h1>Exercise Heading</h1>
-    <p>
-        Sample text goes here. sample button and img below.
-        could be track workout?? Will need to be configured/routed
+    <br>
+    <br>
 
+    
+    <form>
+        <h3>Add new Exercises</h3>
+        <div>
+            <label class="label col-sm-3">Exercise:</label>
+            <input type="text" name="ExerciseName" [(ngModel)]="activity" class="form-control" placeholder="type " required>
+            <button (click)="getActivityList()" class="btn btn-secondary">Submit</button>
+        </div>
+    </form>
+
+    <br>
+    
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Activities</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let a of activityList">
+                <td>{{a.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <br>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Activity</th>
+                <th scope="col">Calories Burned by the Hour</th>
+                <th scope="col">Duration in Minutes</th>
+                <th scope="col">Total Calories Burned</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of exercises">
+                <td>{{e.name}}</td>
+                <td>{{e.caloriesPerHour}}</td>
+                <td>{{e.durationInMinutes}}</td>
+                <td>{{e.totalCaloriesBurned}}</td>
+                -->
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+
+    <p>
         <br>
     <br>
     <br>
@@ -28,15 +78,13 @@
         <img src="pic_trulli.jpg" alt="Italian Trulli">
     </div>
 
-
     <div></div>
-    <br>
     <br>
     <br>
     <h1>Exercise Heading 2</h1>
     <p>
-        sample text here.  could use button and img from above (would need to be configured)
-
+            This is where the wording and stuff goes.
+    
         <br>
     <br>
     <br>
@@ -49,10 +97,6 @@
 </div>
 
     <div></div>
-    <br>
-    <br>
-    <br>
-    <h2>Exercise Heading 3</h2>
     <p>
         
     </p>

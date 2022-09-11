@@ -15,6 +15,10 @@ import { FoodComponent } from './components/food/food.component';
 import { ExerciseComponent } from './components/exercise/exercise.component';
 import { AccountComponent } from './components/account/account.component';
 import { AboutComponent } from './components/about/about.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 
 @NgModule({
@@ -31,14 +35,16 @@ import { AboutComponent } from './components/about/about.component';
     FoodComponent,
     ExerciseComponent,
     AccountComponent,
-    AboutComponent,
+    AboutComponent
     
     
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
