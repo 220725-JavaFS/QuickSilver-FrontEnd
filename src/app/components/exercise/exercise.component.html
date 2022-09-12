@@ -13,10 +13,65 @@
     <br>
     <br>
     <h1>Exercise Heading</h1>
-    <p>
-        Sample text goes here. sample button and img below.
-        could be track workout?? Will need to be configured/routed
+    <br>
+    <br>
 
+    
+    <form>
+        <h3>Add new Exercises</h3>
+        <div>
+            <label class="label col-sm-3">Exercise:</label>
+            <input type="text" name="ExerciseName" [(ngModel)]="activity" class="form-control" placeholder="type " required>
+            <label class="label col-sm-3">Duration in Minutes:</label>
+            <input type="text" name="ExerciseDuration" [(ngModel)]="durationInMinutes" class="form-control" placeholder="duration " required>
+            <button (click)="getActivityList()" class="btn btn-secondary">Submit</button>
+        </div>
+    </form>
+
+    <br>
+    
+
+
+
+    <form>
+        <legend>Select the Exercise:</legend>
+        <div *ngFor="let a of activityList">
+            <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" name="OnlyOne" id={{a.name}}>
+                <label type="text" class="custom-control-label">{{a.name}}</label>
+            </div>
+            <!--<button (click)="sendExercise(a)">Submit</button>-->
+        </div>        
+    </form>>
+    
+    
+
+    <br>
+    <br>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Activity</th>
+                <th scope="col">Calories Burned by the Hour</th>
+                <th scope="col">Duration in Minutes</th>
+                <th scope="col">Total Calories Burned</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of exercises">
+                <td>{{e.name}}</td>
+                <td>{{e.calories_per_hour}}</td>
+                <td>{{e.duration_minutes}}</td>
+                <td>{{e.total_calories}}</td>
+                -->
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+
+    <p>
         <br>
     <br>
     <br>
@@ -24,19 +79,15 @@
             Track Workout??
         </a>
         <!-- <div style = "position:relative; left:80px; top:2px; //background-color:yellow;"></div> -->
-    <div style="position:relative; left:145px; top:-40px;">
-        <img src="pic_trulli.jpg" alt="Italian Trulli">
-    </div>
-
+    
 
     <div></div>
     <br>
     <br>
-    <br>
     <h1>Exercise Heading 2</h1>
     <p>
-        sample text here.  could use button and img from above (would need to be configured)
-
+            This is where the wording and stuff goes.
+    
         <br>
     <br>
     <br>
@@ -44,15 +95,8 @@
         Sample
     </a>
     <!-- <div style = "position:relative; left:80px; top:2px; //background-color:yellow;"></div> -->
-<div style="position:relative; left:120px; top:-40px;">
-    <img src="pic_trulli.jpg" alt="Italian Trulli">
-</div>
 
     <div></div>
-    <br>
-    <br>
-    <br>
-    <h2>Exercise Heading 3</h2>
     <p>
         
     </p>

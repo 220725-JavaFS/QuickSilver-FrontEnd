@@ -15,7 +15,11 @@ import { FoodComponent } from './components/food/food.component';
 import { ExerciseComponent } from './components/exercise/exercise.component';
 import { AccountComponent } from './components/account/account.component';
 import { AboutComponent } from './components/about/about.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -32,14 +36,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FoodComponent,
     ExerciseComponent,
     AccountComponent,
-    AboutComponent,
-    
-    
+    AboutComponent,    
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
     NgbModule
   ],
   providers: [],
