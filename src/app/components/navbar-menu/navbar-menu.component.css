@@ -1,12 +1,12 @@
 .menu-nav{
-  height:18px;
+  height:21px;
   background-color: rgb(0, 0, 0);
   width: 100%;
   margin:0;
   border:0;
   padding:0;
   position: absolute;
-  top: 57px;
+  top: 65px;
   left:0;
 }
 
@@ -18,7 +18,7 @@
   font-family: 'Inter';
   font-weight: 600;
   font-style: normal;
-  font-size: 15px;
+  font-size: 16px;
   
 }
 .button2{
@@ -30,7 +30,7 @@
   font-family: 'Inter';
   font-weight: 600;
   font-style: normal;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .button3{
@@ -43,5 +43,5 @@
   font-family: 'Inter';
   font-weight: 600;
   font-style: normal;
-  font-size: 15px;
+  font-size: 16px;
 }

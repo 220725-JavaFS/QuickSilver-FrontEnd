@@ -22,7 +22,11 @@ export class LoginComponent implements OnInit {
   LoginUser(){
       this.loginService.loginClient(this.clientUsername,this.clientPassword);
       }
-    }
+
+
+  }
+
+  
       
   export interface LoggedClientEvent{
     username: string;
