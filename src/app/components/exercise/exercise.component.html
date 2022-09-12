@@ -22,24 +22,29 @@
         <div>
             <label class="label col-sm-3">Exercise:</label>
             <input type="text" name="ExerciseName" [(ngModel)]="activity" class="form-control" placeholder="type " required>
+            <label class="label col-sm-3">Duration in Minutes:</label>
+            <input type="text" name="ExerciseDuration" [(ngModel)]="durationInMinutes" class="form-control" placeholder="duration " required>
             <button (click)="getActivityList()" class="btn btn-secondary">Submit</button>
         </div>
     </form>
 
     <br>
     
-    <table>
-        <thead>
-            <tr>
-                <th scope="col">Activities</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let a of activityList">
-                <td>{{a.name}}</td>
-            </tr>
-        </tbody>
-    </table>
+
+
+
+    <form>
+        <legend>Select the Exercise:</legend>
+        <div *ngFor="let a of activityList">
+            <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" name="OnlyOne" id={{a.name}}>
+                <label type="text" class="custom-control-label">{{a.name}}</label>
+            </div>
+            <!--<button (click)="sendExercise(a)">Submit</button>-->
+        </div>        
+    </form>>
+    
+    
 
     <br>
     <br>
@@ -56,9 +61,9 @@
         <tbody>
             <tr *ngFor="let e of exercises">
                 <td>{{e.name}}</td>
-                <td>{{e.caloriesPerHour}}</td>
-                <td>{{e.durationInMinutes}}</td>
-                <td>{{e.totalCaloriesBurned}}</td>
+                <td>{{e.calories_per_hour}}</td>
+                <td>{{e.duration_minutes}}</td>
+                <td>{{e.total_calories}}</td>
                 -->
             </tr>
         </tbody>
@@ -74,9 +79,7 @@
             Track Workout??
         </a>
         <!-- <div style = "position:relative; left:80px; top:2px; //background-color:yellow;"></div> -->
-    <div style="position:relative; left:145px; top:-40px;">
-        <img src="pic_trulli.jpg" alt="Italian Trulli">
-    </div>
+    
 
     <div></div>
     <br>
@@ -92,9 +95,6 @@
         Sample
     </a>
     <!-- <div style = "position:relative; left:80px; top:2px; //background-color:yellow;"></div> -->
-<div style="position:relative; left:120px; top:-40px;">
-    <img src="pic_trulli.jpg" alt="Italian Trulli">
-</div>
 
     <div></div>
     <p>

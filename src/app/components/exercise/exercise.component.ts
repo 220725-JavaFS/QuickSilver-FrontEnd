@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Exercise } from 'src/app/exercise';
+import { ExerciseComplete } from 'src/app/exercise-complete';
 import { ServicesService } from 'src/app/services/services.service';
 
 
@@ -14,10 +15,13 @@ export class ExerciseComponent implements OnInit {
   activity:string = '';
   //the getExercises will return an array in Json format
   activityList:Exercise[] = [];
+  date:Date = new Date();
+  durationInMinutes:number = 30; //default
   // this will display a list of their current exercises from the database
   chosenExercise:Exercise = <Exercise>{};  // is this how to create an empty object?o.O
   exercises:Exercise[] = [];
 
+  
   constructor(private ss: ServicesService) {}
 
 
@@ -43,15 +47,18 @@ export class ExerciseComponent implements OnInit {
               }})
   }
  
+
  /* addDateToOExercise(chosenExercise:Exercise):void{
     chosenExercise["date"] = ;
   }*/
 
   //this will add the exercise to the database through the services layer
   sendExercise(chosenExercise:Exercise): void {
-      
-    let e = new Exercise(chosenExercise.name, chosenExercise.caloriesPerHour, //not sure if i need the same name as shown on API
-      chosenExercise.durationInMinutes, chosenExercise.totalCaloriesBurned)
+    
+    let totalCaloriesBurned:number = Math.round(this.durationInMinutes*(chosenExercise.calories_per_hour/60));
+    
+    let e = new ExerciseComplete(this.date, chosenExercise.name,
+      this.durationInMinutes, totalCaloriesBurned)
           this.ss.addExercise(e); //.subscribe(
       }
     

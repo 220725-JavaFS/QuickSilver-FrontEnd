@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Exercise } from '../exercise';
+import { ExerciseComplete } from '../exercise-complete';
 
 
 @Injectable({
@@ -14,7 +15,6 @@ export class ServicesService {
   //gets all Exercises saved in the database
   getAllExercises():Observable<Exercise[]> {
     return this.http.get<Exercise[]>('http://localhost:4200/exercise');
-
   }
 
 
@@ -34,9 +34,9 @@ export class ServicesService {
   }
 
   //adds a single exercise to the database
-  addExercise(e:Exercise): Observable<Exercise> {
+  addExercise(e:ExerciseComplete): Observable<ExerciseComplete> {
     console.log(e);
-    return this.http.put<Exercise>('http://localhost:4200/exercise', e)
+    return this.http.post<ExerciseComplete>('http://localhost:4200/exercise', e)
   }
 }
 

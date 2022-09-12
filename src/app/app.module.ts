@@ -17,6 +17,8 @@ import { AccountComponent } from './components/account/account.component';
 import { AboutComponent } from './components/about/about.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
+
 
 
 
@@ -35,9 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     FoodComponent,
     ExerciseComponent,
     AccountComponent,
-    AboutComponent
-    
-    
+    AboutComponent,    
 
   ],
   imports: [
