@@ -1,37 +1,49 @@
 .menu-nav{
-  height:21px;
+  height:16px;
   background-color: rgb(0, 0, 0);
   width: 100%;
   margin:0;
   border:0;
   padding:0;
   position: absolute;
-  top: 65px;
+  top: 57px;
   left:0;
+  font-family: "Neue Plak UA",Helvetica,Arial,-apple-system,sans-serif;
+  font-size: 13px;
+  text-align: bottom;
+  align-items: center;
 }
 
 .button{
   background-color: black;
   color: white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
   padding: 0px 12px;
   text-decoration: none;
-  font-family: 'Inter';
   font-weight: 600;
   font-style: normal;
-  font-size: 16px;
   
 }
+
+.button:hover{
+  background-color: lightslategrey;
+  }
+
 .button2{
   background-color: black;
   color: white;
   border-left: 1px solid white;
+  border-right: 1px solid white;
   padding: 0px 12px;
   text-decoration: none;
-  font-family: 'Inter';
   font-weight: 600;
   font-style: normal;
-  font-size: 16px;
 }
+
+.button2:hover{
+  background-color: lightslategrey;
+  }
 
 .button3{
   background-color: black;
@@ -40,8 +52,10 @@
   border-right: 1px solid white;
   padding: 0px 12px;
   text-decoration: none;
-  font-family: 'Inter';
   font-weight: 600;
   font-style: normal;
-  font-size: 16px;
 }
+
+.button3:hover{
+  background-color: lightslategrey;
+  }
