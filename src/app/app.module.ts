@@ -18,8 +18,7 @@ import { AboutComponent } from './components/about/about.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
-
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -44,7 +43,8 @@ import { DatePipe } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
