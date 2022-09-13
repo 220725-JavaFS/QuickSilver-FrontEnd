@@ -12,36 +12,36 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
-  
 
-  constructor(private accountService: AccountService, private router:Router){
+
+  constructor(private accountService: AccountService, private router: Router) {
     this.currentFName = AccountSingletonModule.fname;
     this.currentLName = AccountSingletonModule.lname;
     this.currentEmail = AccountSingletonModule.email;
-    if(AccountSingletonModule.caloricGoal <= 0){
+    if (AccountSingletonModule.caloricGoal <= 0) {
       this.currentCalGoal = NaN;
-    }else{
+    } else {
       this.currentCalGoal = AccountSingletonModule.caloricGoal;
     }
   }
 
-  currentFName:string;
-  currentLName:string;
-  currentEmail:string;
-  currentCalGoal:number;
+  currentFName: string;
+  currentLName: string;
+  currentEmail: string;
+  currentCalGoal: number;
 
 
 
-  isLoggedIn(): boolean{
+  isLoggedIn(): boolean {
     return AccountSingletonModule.isLoggedIn;
   }
 
-  updateUserData():void{
-    let updatedClientData:Client = new Client(AccountSingletonModule.clientId,this.currentFName,this.currentLName,this.currentEmail,AccountSingletonModule.username,AccountSingletonModule.password,this.currentCalGoal == NaN ? -1:this.currentCalGoal);
+  updateUserData(): void {
+    let updatedClientData: Client = new Client(AccountSingletonModule.clientId, this.currentFName, this.currentLName, this.currentEmail, AccountSingletonModule.username, AccountSingletonModule.password, this.currentCalGoal == NaN ? -1 : this.currentCalGoal);
     let newClientData = this.accountService.update(updatedClientData);
-    if(newClientData == null){
+    if (newClientData == null) {
       return;
-    } 
+    }
     AccountSingletonModule.accountId = newClientData.id;
     AccountSingletonModule.fname = newClientData.fName;
     AccountSingletonModule.lname = newClientData.lName;
@@ -53,12 +53,12 @@ export class AccountComponent implements OnInit {
   }
 
 
-  
+
 
 
 
   ngOnInit(): void {
-    if(!AccountSingletonModule.isLoggedIn){
+    if (!AccountSingletonModule.isLoggedIn) {
       this.router.navigate(["login"])
     }
 

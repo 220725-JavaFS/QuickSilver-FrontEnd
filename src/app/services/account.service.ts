@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Client } from "../clientDTO"
 
 @Injectable({
@@ -29,15 +29,15 @@ export class AccountService {
   //   return false;
   // }
 
-  
 
-  update(newClientData:Client):Client{
-    this.http.put<Client>("http://localhost:8084/data/client/"+newClientData.id.toString(), Client).subscribe({
-      next(value:Client) {
-          return value;
+
+  update(newClientData: Client): Client {
+    this.http.put<Client>("http://localhost:8084/data/client/" + newClientData.id.toString(), newClientData, { headers: { "Content-Type": "application/json" } }).subscribe({
+      next(value: Client) {
+        return value;
       },
     })
-    return new Client(0,"","","","","",-1);
+    return new Client(0, "", "", "", "", "", -1);
   }
 
 

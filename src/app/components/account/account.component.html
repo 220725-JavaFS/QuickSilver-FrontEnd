@@ -14,7 +14,7 @@
     <br>
     <h2>Account Info</h2>
     <br>
-    <table *ngIf="isLoggedIn()">
+    <table>
         <tr>
             <td>First Name</td>
             <td><input type="text" name="fname" [(ngModel)]="currentFName"></td>
@@ -33,12 +33,12 @@
         </tr>
     </table>
     <br>
-    <div style="position:relative; left:130px; top: -10px;" *ngIf="isLoggedIn();">
-        <button type="button">Update info</button>
+    <div style="position:relative; left:130px; top: -10px;">
+        <button type="button" (click)="this.updateUserData()">Update info</button>
         <!-- <input type="text" [(ngModel)]="newTodo">
     <button (click)="addTodo()">Add Todo to List</button> for later to connect to models-->
     </div>
-    <div *ngIf="!isLoggedIn()">You are not logged in, go to the <a routerLink="/login">login page</a></div>
+
 
 
 </body>
