@@ -9,14 +9,12 @@
   <div>
     <br>
     <br>
-    <br>
     <div>
       <div>
         <h2> Welcome back, {{this.fname}} {{this.lname}}!</h2>
         <h3>{{this.email}}</h3>
         <hr>
-        <br>
-        <h3><small>Here is your most recent workout</small></h3>
+        <h3>Here is your most recent workout</h3>
         <hr>
         <table style="width:100%">
           <tr>
@@ -26,10 +24,10 @@
             <th>Calories burned</th>
           </tr>
           <tr>
-            <td>{{this.date}}</td>
-            <td>{{this.lastWorkoutName}}</td>
-            <td>{{this.lastWorkoutDuration}} minutes long</td>
-            <td>{{this.lastWorkoutCalories}}</td>
+            <th>{{this.date}}</th>
+            <th>{{this.lastWorkoutName}}</th>
+            <th>{{this.lastWorkoutDuration}} minutes long</th>
+            <th>{{this.lastWorkoutCalories}}</th>
           </tr>
         </table>
         <br><br>
@@ -45,14 +43,14 @@
             <td><a routerLinkActive="active" routerLink="/account">{{this.caloricGoal}}</a></td>
             <td>{{this.lastWorkoutCalories}}</td>
             <td *ngIf="this.caloriesBurnedToday != this.lastWorkoutCalories">{{this.caloriesBurnedToday}}</td>
-            
-            <!-- <td>{{this.lastWorkoutCalories}}</td> -->
-           
           </tr>
         </table>
-        <br><br>
-
+      
+      
       </div>
+      <br>
+      <br>
     </div>
   </div>
+
 </body>
