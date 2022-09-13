@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Exercise } from 'src/app/exercise';
 import { ExerciseComplete } from 'src/app/exercise-complete';
 import { ServicesService } from 'src/app/services/services.service';
@@ -13,8 +12,6 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./exercise.component.css']
 })
 export class ExerciseComponent implements OnInit {
-
-
   //activity will be what the user will select.
   activity:string = '';
   //the getExercises will return an array in Json format
@@ -24,14 +21,16 @@ export class ExerciseComponent implements OnInit {
   // this will display a list of their current exercises from the database
   chosenExercise:Exercise = <Exercise>{};  // is this how to create an empty object?o.O
   exercises:Exercise[] = [];
-
-  
-  constructor(private ss: ServicesService) {}
-
+  constructor(private ss: ServicesService, private loginService: LoginService) {}
 
   ngOnInit(): void {
-    this.getExercises();
+    this.checkIfUserIsLoggedIn();
   }
+
+  checkIfUserIsLoggedIn(){
+    this.loginService.checkUserLogin();
+    this.getExercises();
+}
 
   getExercises() {
     this.ss.getAllExercises().subscribe(
@@ -49,19 +48,12 @@ export class ExerciseComponent implements OnInit {
                  if (fullp) {
                 this.activityList=response;
               }})
-
-  constructor(private loginService: LoginService, private router: Router) { }
-
-  ngOnInit(): void {
-    this.checkIfUserIsLoggedIn();
-
   }
  
 
  /* addDateToOExercise(chosenExercise:Exercise):void{
     chosenExercise["date"] = ;
   }*/
-
 
   //this will add the exercise to the database through the services layer
   sendExercise(chosenExercise:Exercise): void {
@@ -74,10 +66,3 @@ export class ExerciseComponent implements OnInit {
       }
     
 }
-
-  checkIfUserIsLoggedIn(){
-    this.loginService.checkUserLogin();
-}
-
-}
-
