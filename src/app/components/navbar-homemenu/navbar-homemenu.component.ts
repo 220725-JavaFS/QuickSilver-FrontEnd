@@ -14,9 +14,6 @@ export class NavbarHomemenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  LogoutClientNav(){
-    console.log("I have been called in the nav-bar-menu")
-    this.loginService.logoutClient();
-  }
+  
 
 }
