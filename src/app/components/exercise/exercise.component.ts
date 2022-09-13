@@ -19,8 +19,7 @@ export class ExerciseComponent implements OnInit {
   durationInMinutes:number = 30; //default
   // this will display a list of their current exercises from the database
   chosenExercise:Exercise = <Exercise>{};  // is this how to create an empty object?o.O
-  exercises:Exercise[] = [];
-
+  exercisesComplete:ExerciseComplete[] = [];
   
   constructor(private ss: ServicesService) {}
 
@@ -31,8 +30,8 @@ export class ExerciseComponent implements OnInit {
 
   getExercises() {
     this.ss.getAllExercises().subscribe(
-      (response: Exercise[]) => {
-        this.exercises = response;
+      (response: ExerciseComplete[]) => {
+        this.exercisesComplete = response;
       }
     )
   }
@@ -62,4 +61,5 @@ export class ExerciseComponent implements OnInit {
           this.ss.addExercise(e); //.subscribe(
       }
     
+
 }

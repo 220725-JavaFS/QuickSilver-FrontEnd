@@ -13,8 +13,8 @@ export class ServicesService {
   constructor(private http: HttpClient) { }
 
   //gets all Exercises saved in the database
-  getAllExercises():Observable<Exercise[]> {
-    return this.http.get<Exercise[]>('http://localhost:4200/exercise');
+  getAllExercises():Observable<ExerciseComplete[]> {
+    return this.http.get<ExerciseComplete[]>('http://localhost:4200/exercise');
   }
 
 

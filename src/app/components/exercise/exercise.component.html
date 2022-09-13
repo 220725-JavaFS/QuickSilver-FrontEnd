@@ -40,7 +40,7 @@
                 <input type="radio" class="custom-control-input" name="OnlyOne" id={{a.name}}>
                 <label type="text" class="custom-control-label">{{a.name}}</label>
             </div>
-            <!--<button (click)="sendExercise(a)">Submit</button>-->
+            <button (click)="sendExercise(a)">Submit</button>
         </div>        
     </form>>
     
@@ -59,12 +59,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let e of exercises">
+            <tr *ngFor="let e of exercisesComplete">
+                <td>{{e.date}}</td>
                 <td>{{e.name}}</td>
-                <td>{{e.calories_per_hour}}</td>
-                <td>{{e.duration_minutes}}</td>
-                <td>{{e.total_calories}}</td>
-                -->
+                <td>{{e.durMin}}</td>
+                <td>{{e.totCal}}</td>
             </tr>
         </tbody>
     </table>
