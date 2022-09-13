@@ -2,57 +2,57 @@
 <app-navbar-homeaccount></app-navbar-homeaccount>
 
 <head>
-    <title>About Title</title>
+  <title>About Title</title>
 </head>
 
 <body>
+  <div>
+    <br>
+    <br>
+    <br>
     <div>
+      <div>
+        <h2> Welcome back, {{this.fname}} {{this.lname}}!</h2>
+        <h3>{{this.email}}</h3>
+        <hr>
         <br>
-        <br>
-        <br>
-        <div>
-          <div>
-            <h2> Welcome back, {{this.fname}} {{this.lname}}!</h2>
-            <h3>{{this.email}}</h3>
-            <hr>
-            <br>
-            <h3><small>Here is your most recent workout</small></h3>
-            <hr>
-            <table style="width:100%">
-              <tr>
-                <th>Date (MM/DD/YYYY)</th>
-                <th>Activity Completed</th>
-                <th>Duration of exercise</th>
-                <th>Calories burned</th>
-              </tr>
-              <tr>
-                <td>{{this.date}}</td>
-                <td>{{this.lastWorkoutName}}</td>
-                <td>{{this.lastWorkoutDuration}} minutes long</td>
-                <td>{{this.lastWorkoutCalories}}</td>
-              </tr>
-            </table>
-            <br><br>
-            <h3><small>Here is your progress</small></h3>
-            <hr>
-            <table style="width:100%">
-              <tr>
-                <th>Calories goal</th>
-                <th>Calories burned today</th>
-                <th>Calories left to go</th>
-              </tr>
-              <tr>
-                <td>{{this.caloricGoal}}</td>
-                <td>{{this.lastWorkoutCalories}}</td>
-                <td>{{this.caloriesLeft}}</td>
-                <td><a routerLinkActive="active" routerLink="/account">{{this.caloricGoal}}</a></td>
-                <td>{{this.lastWorkoutCalories}}</td>
-                <td *ngIf="this.caloriesBurnedToday != this.lastWorkoutCalories">{{this.caloriesBurnedToday}}</td>
-              </tr>
-            </table>
-            <br><br>
-        
-          </div>
-        </div>
+        <h3><small>Here is your most recent workout</small></h3>
+        <hr>
+        <table style="width:100%">
+          <tr>
+            <th>Date (MM/DD/YYYY)</th>
+            <th>Activity Completed</th>
+            <th>Duration of exercise</th>
+            <th>Calories burned</th>
+          </tr>
+          <tr>
+            <td>{{this.date}}</td>
+            <td>{{this.lastWorkoutName}}</td>
+            <td>{{this.lastWorkoutDuration}} minutes long</td>
+            <td>{{this.lastWorkoutCalories}}</td>
+          </tr>
+        </table>
+        <br><br>
+        <h3><small>Here is your progress</small></h3>
+        <hr>
+        <table style="width:100%">
+          <tr>
+            <th>Calories goal</th>
+            <th>Calories burned today</th>
+            <th>Calories left to go</th>
+          </tr>
+          <tr>
+            <td><a routerLinkActive="active" routerLink="/account">{{this.caloricGoal}}</a></td>
+            <td>{{this.lastWorkoutCalories}}</td>
+            <td *ngIf="this.caloriesBurnedToday != this.lastWorkoutCalories">{{this.caloriesBurnedToday}}</td>
+            
+            <!-- <td>{{this.lastWorkoutCalories}}</td> -->
+           
+          </tr>
+        </table>
+        <br><br>
+
       </div>
+    </div>
+  </div>
 </body>

@@ -20,6 +20,8 @@ export class AboutComponent implements OnInit {
   
   ngOnInit(): void {
     this.checkIfUserIsLoggedIn();
+    this.caloricGoal = this.getCalGoalSuggestion();
+
   }
 
   
@@ -28,6 +30,7 @@ export class AboutComponent implements OnInit {
     this.loginService.checkUserLogin();
     this.getMostRecentWorkoutInfo(AccountSingletonModule.clientId);
     this.getCalGoalSuggestion();
+    console.log(AccountSingletonModule.caloricGoal, "<----LOOOK OVER HERE PLEASEEEEE")
     console.log(this.username);
     console.log(this.clientId, "<---- Client ID");
     console.log(this.fname, "<---- First Name");
