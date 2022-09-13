@@ -30,18 +30,13 @@ export class AboutComponent implements OnInit {
         this.exercises=response;
         console.log(response);
         console.log("Date of your most recent workout: ", response[response.length-1].date);
-        console.log("Duration of your most recent workout: ", response[0].durMin);
-        console.log("Name of your most recent workout: ", response[0].name);
-        console.log("Calories burned during your most recent workout: ", response[0].totCal);
+        console.log("Duration of your most recent workout: ", response[response.length-1].durMin);
+        console.log("Name of your most recent workout: ", response[response.length-1].name);
+        console.log("Calories burned during your most recent workout: ", response[response.length-1].totCal);
+        ////////////////////////////////////////////////////////////////
+        
       }
     );
-
-
-    // console.log(this.getLastWorkout());
-    // this.exercises;
-    // console.log(this.exercises, "exercises here?");
-    // console.log("Hello from about component init");
-    
   }
 
 
@@ -51,7 +46,7 @@ export class AboutComponent implements OnInit {
   url:string = "http://localhost:8084/data/workout/getWorkouts";
   //Pass in loged user id?
 
-  
+  // id:number
   getLastWorkout():Observable<ExerciseComplete[]>{
     return this.httpClient.get(this.url,{
         headers:{
