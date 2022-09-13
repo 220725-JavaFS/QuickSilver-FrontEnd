@@ -81,7 +81,7 @@ export class LoginService {
    }
 
    getClientInfo(id:number){
-    return this.http.get<Client>('http://localhost:8084/data/client/'+id);
+    return this.http.get<Client>('http://localhost:8084/data/client/'+id.toString());
    }
 
 
