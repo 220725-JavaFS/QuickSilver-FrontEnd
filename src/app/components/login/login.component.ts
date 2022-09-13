@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Account } from 'src/app/accountDTO';
 import { LoginService } from 'src/app/services/login.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -20,9 +21,14 @@ export class LoginComponent implements OnInit {
   }
 
   LoginUser(){
+
+      console.log("I have been called");
       this.loginService.loginClient(this.clientUsername,this.clientPassword);
       }
-    }
+
+
+  }
+
       
   export interface LoggedClientEvent{
     username: string;
