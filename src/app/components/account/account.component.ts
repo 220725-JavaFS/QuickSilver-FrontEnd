@@ -23,17 +23,29 @@ export class AccountComponent implements OnInit {
     } else {
       this.currentCalGoal = AccountSingletonModule.caloricGoal;
     }
+    this.newPassword = "";
+    this.updatedUserInfo = false;
+    this.updatedUserPassword = false;
   }
 
   currentFName: string;
   currentLName: string;
   currentEmail: string;
   currentCalGoal: number;
+  newPassword: string;
+  updatedUserInfo:boolean;
+  updatedUserPassword:boolean;
 
 
 
   isLoggedIn(): boolean {
     return AccountSingletonModule.isLoggedIn;
+  }
+
+  updatePassword():void{
+    let updatedClientData:Client = new Client(AccountSingletonModule.clientId,AccountSingletonModule.fname,AccountSingletonModule.lname,AccountSingletonModule.email,AccountSingletonModule.username, this.newPassword, AccountSingletonModule.caloricGoal);
+    this.accountService.updatePassword(updatedClientData);
+    this.updatedUserPassword = true;
   }
 
   updateUserData(): void {
@@ -49,7 +61,7 @@ export class AccountComponent implements OnInit {
     AccountSingletonModule.username = newClientData.username;
     AccountSingletonModule.password = newClientData.password;
     AccountSingletonModule.caloricGoal = newClientData.caloricGoal;
-
+    this.updatedUserInfo = true;
   }
 
 

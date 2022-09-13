@@ -1,20 +1,49 @@
+#hyperion{
+  color:white;
+  text-align: center;
+  font-size: 32px;
+  font-family: "Neue Plak UA",Helvetica,Arial,-apple-system,sans-serif;
+  text-shadow: 0px 1px 2px rgb(160, 160, 160);
+  margin:0;
+  padding:1px;
+
+}
+.nav-bar{
+  border: 0;
+  background-color: rgb(49, 49, 49);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  position: absolute;
+  top:0;
+  left:0;
+  font-family: "Neue Plak UA",Helvetica,Arial,-apple-system,sans-serif;
+  display:block
+}
+
 .button{
-    background-color: rgb(147, 168, 205);
-    color: rgb(21, 66, 84);
-    padding: 6px 12px;
-    text-decoration: none;
+  background-color: rgb(49, 49, 49);
+  color: white;
+  padding: 0px 12px;
+  margin: 0px;
+  text-decoration: none;
+  border-right: 1px solid white;
     
   }
-  .button2{
-    background-color: rgb(147, 168, 205);
-    color: rgb(21, 66, 84);
-    padding: 6px 12px;
-    text-decoration: none;
+  
+  .logout-Button{
+    background-color: rgb(49, 49, 49);
+    color: white;
+    padding: 0px 10px;
+    margin: 0px;
+    border-left: 0px solid white;
+    border:0px;
+    font-size: 18px;
+    font-family: "Neue Plak UA",Helvetica,Arial,-apple-system,sans-serif;
+  
   }
 
-  .button3{
-    background-color: rgb(147, 168, 205);
-    color: rgb(21, 66, 84);
-    padding: 6px 12px;
-    text-decoration: none;
+  .logout-nav-bar{
+    text-align: center;
   }
