@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import {ExerciseComplete} from '../../exercise-complete';
 import { Exercise } from 'src/app/exercise';
-
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { Exercise } from 'src/app/exercise';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
+
 export class AboutComponent implements OnInit { 
   
   constructor(private httpClient:HttpClient) { }
@@ -53,6 +55,19 @@ export class AboutComponent implements OnInit {
         accept:"application/json"
       }
     }) as Observable<ExerciseComplete[]>;
+    
+    
+export class AboutComponent implements OnInit {
+
+  constructor(private loginService: LoginService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.checkIfUserIsLoggedIn();
+  }
+
+  checkIfUserIsLoggedIn(){
+    this.loginService.checkUserLogin();
+
   }
  
 
