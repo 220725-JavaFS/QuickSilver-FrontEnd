@@ -54,33 +54,6 @@ export class AboutComponent implements OnInit {
       }
     }) as Observable<ExerciseComplete[]>;
   }
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
