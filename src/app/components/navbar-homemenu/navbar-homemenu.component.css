@@ -22,4 +22,12 @@
     font-family: 'Inter';
   }
 
+  .button4{
+    background-color: rgb(147, 168, 205);
+    color: rgb(21, 66, 84);
+    padding: 6px 12px;
+    text-decoration: none;
+    font-family: 'Inter';
+  }
+
  

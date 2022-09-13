@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 import { Observable } from 'rxjs';
 
 
@@ -10,10 +12,16 @@ import { Observable } from 'rxjs';
 })
 export class AboutComponent implements OnInit { 
 
+
   
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient, private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+    this.checkIfUserIsLoggedIn();
+  }
+
+  checkIfUserIsLoggedIn(){
+    this.loginService.checkUserLogin();
   }
 
 

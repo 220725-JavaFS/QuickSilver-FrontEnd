@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 import { Exercise } from 'src/app/exercise';
 import { ExerciseComplete } from 'src/app/exercise-complete';
 import { ServicesService } from 'src/app/services/services.service';
 import { DatePipe } from '@angular/common'
+
 
 @Component({
   selector: 'app-exercise',
@@ -11,7 +14,7 @@ import { DatePipe } from '@angular/common'
 })
 export class ExerciseComponent implements OnInit {
 
-  //activity will be what the user will select.
+//activity will be what the user will select.
   activity:string = '';
   //the getExercises will return an array in Json format
   activityList:Exercise[] = [];
@@ -20,15 +23,17 @@ export class ExerciseComponent implements OnInit {
   // this will display a list of their current exercises from the database
   chosenExercise:Exercise = <Exercise>{};  // is this how to create an empty object?o.O
   exercisesComplete:ExerciseComplete[] = [];
-  
-  constructor(private ss: ServicesService) {}
 
+  constructor(private loginService: LoginService, private router: Router, private ss: ServicesService) { }
 
   ngOnInit(): void {
+    this.checkIfUserIsLoggedIn();
     this.getExercises();
   }
 
-
+  checkIfUserIsLoggedIn(){
+    this.loginService.checkUserLogin();
+}
 
   getExercises() {
     this.ss.getAllExercises().subscribe(
