@@ -15,8 +15,8 @@
             <h2> Welcome back, {{this.fname}} {{this.lname}}!</h2>
             <h3>{{this.email}}</h3>
             <hr>
-            <br><br>
-            <h4><small>Here is your most recent workout</small></h4>
+            <br>
+            <h3><small>Here is your most recent workout</small></h3>
             <hr>
             <table style="width:100%">
               <tr>
@@ -33,14 +33,22 @@
               </tr>
             </table>
             <br><br>
-            <br><br>
-          
-            <h4><small>Here is your progress on your daily calorie goal!</small></h4>
+            <h3><small>Here is your progress</small></h3>
             <hr>
-            <h5>Calories goal: {{this.caloricGoal}}</h5>
-            <h5>Calories burned today: {{this.lastWorkoutCalories}}</h5>
-            <h5>Calories left to go: {{this.caloricGoal}} - {{this.lastWorkoutCalories}} </h5>
+            <table style="width:100%">
+              <tr>
+                <th>Calories goal</th>
+                <th>Calories burned today</th>
+                <th>Calories left to go</th>
+              </tr>
+              <tr>
+                <td>{{this.caloricGoal}}</td>
+                <td>{{this.lastWorkoutCalories}}</td>
+                <td>{{this.caloriesLeft}}</td>
+              </tr>
+            </table>
             <br><br>
+        
           </div>
         </div>
       </div>

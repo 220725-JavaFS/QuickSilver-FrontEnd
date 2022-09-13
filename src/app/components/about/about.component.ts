@@ -47,11 +47,17 @@ export class AboutComponent implements OnInit {
   lastWorkoutDuration: number = 0;
   lastWorkoutCalories: number = 0;
   date: Date = new Date;
-  dailyCalorieGoal: String = "";
+  dailyCalorieGoal: number = AccountSingletonModule.caloricGoal;
   caloriesBurnedToday: number = 0;
+  caloriesLeft:number = this.dailyCalorieGoal - this.caloriesBurnedToday;
   url: string = "http://localhost:8084/data/workout/getWorkouts";
+  
 
   
+
+
+
+
   getLastWorkout(): Observable<ExerciseComplete[]> {
     return this.httpClient.get(this.url, {
       headers: {
@@ -68,7 +74,8 @@ export class AboutComponent implements OnInit {
         this.lastWorkoutName = response[response.length - 1].name.toString();
         this.lastWorkoutDuration = response[response.length - 1].durMin;
         this.lastWorkoutCalories = response[response.length - 1].totCal;
-        this.date = response[response.length - 1].date
+        this.date = response[response.length - 1].date;
+
         console.log(response);
         console.log("Date of your most recent workout: ", response[response.length - 1].date);
         console.log("Duration of your most recent workout: ", response[response.length - 1].durMin);
