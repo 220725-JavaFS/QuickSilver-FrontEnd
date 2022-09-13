@@ -14,30 +14,18 @@ import { DatePipe } from '@angular/common'
 })
 export class ExerciseComponent implements OnInit {
 
-<<<<<<< Updated upstream
 //activity will be what the user will select.
   activity:string = '';
-=======
-  //activity will be what the user will select.
-  activity: string = '';
->>>>>>> Stashed changes
   //the getExercises will return an array in Json format
   activityList: Exercise[] = [];
   date: string = "09/13/2022";
   durationInMinutes: number = 30; //default
   // this will display a list of their current exercises from the database
-<<<<<<< Updated upstream
-  chosenExercise:Exercise = <Exercise>{};  // is this how to create an empty object?o.O
-  exercisesComplete:ExerciseComplete[] = [];
-=======
   chosenExercise: Exercise = <Exercise>{};  // is this how to create an empty object?o.O
   exercisesComplete: ExerciseComplete[] = [];
   exerciseRetrieved: ExerciseComplete = new ExerciseComplete("e", "e", 1, 1);
 
   isBool: boolean = false;
-
-  constructor(private ss: ServicesService) { }
->>>>>>> Stashed changes
 
   constructor(private loginService: LoginService, private router: Router, private ss: ServicesService) { }
 
@@ -46,18 +34,15 @@ export class ExerciseComponent implements OnInit {
     this.getExercises();
   }
 
-<<<<<<< Updated upstream
   checkIfUserIsLoggedIn(){
     this.loginService.checkUserLogin();
 }
 
-=======
   booleanFunction(): void {
     this.isBool = !this.isBool;
   }
 
   //get by ID
->>>>>>> Stashed changes
   getExercises() {
     this.ss.getAllExercises().subscribe(
       (response: ExerciseComplete[]) => {
