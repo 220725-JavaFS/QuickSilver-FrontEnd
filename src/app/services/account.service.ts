@@ -40,6 +40,14 @@ export class AccountService {
     return new Client(0, "", "", "", "", "", -1);
   }
 
+  updatePassword(newClientData: Client): Client {
+    this.http.put<Client>("http://localhost:8084/data/client/password/" + newClientData.id.toString(), newClientData, { headers: { "Content-Type": "application/json" } }).subscribe({
+      next(value: Client) {
+        return value;
+      },
+    })
+    return new Client(0, "", "", "", "", "", -1);
+  }
 
   constructor(private http: HttpClient) {
 
