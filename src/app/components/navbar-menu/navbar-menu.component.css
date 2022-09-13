@@ -6,7 +6,7 @@
   border:0;
   padding:0;
   position: absolute;
-  top: 57px;
+  top: 60px;
   left:0;
   font-family: "Neue Plak UA",Helvetica,Arial,-apple-system,sans-serif;
   font-size: 13px;
@@ -17,7 +17,7 @@
 .button{
   background-color: black;
   color: white;
-  border-left: 1px solid white;
+  border-left: 0px solid white;
   border-right: 1px solid white;
   padding: 0px 12px;
   text-decoration: none;
@@ -59,3 +59,18 @@
 .button3:hover{
   background-color: lightslategrey;
   }
+
+  .button4{
+    background-color: black;
+    color: white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    padding: 0px 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .button4:hover{
+    background-color: lightslategrey;
+    }
