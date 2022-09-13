@@ -16,22 +16,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class AboutComponent implements OnInit {
 
   constructor(private httpClient: HttpClient, private loginService: LoginService) { }
-
-  exercises: ExerciseComplete[] = [];
-  account: AccountSingletonModule = new AccountSingletonModule;
   
-  ///////////////////////////////////////
-  lastWorkoutDate: String = "";
-  lastWorkoutName: String = "";
-  lastWorkoutDuration: number = 0;
-  lastWorkoutCalories: number = 0;
-  date: Date = new Date;
-  //////////////////////////////////////////
-  // dailyCalorieGoal: number = 0;
-  dailyCalorieGoal: String = "";
-  caloriesBurnedToday: number = 0;
-  //caloriesBurnedProgress
-
   ngOnInit(): void {
     this.checkIfUserIsLoggedIn();
   }
@@ -39,16 +24,34 @@ export class AboutComponent implements OnInit {
   checkIfUserIsLoggedIn() {
     this.loginService.checkUserLogin();
     this.getMostRecentWorkoutInfo();
-    this.getAccountInfo();
-    this.getCalorieGoal();
-    console.log(this.getAccountInfo());
-    console.log(AccountSingletonModule.clientId);
-    console.log(AccountSingletonModule.email.toString());
+    console.log(this.username);
+    console.log(this.clientId, "<---- Client ID");
+    console.log(this.fname, "<---- First Name");
+    console.log(this.lname, "<---- Last Name");
+    console.log(this.email, "<--- Email");
+    console.log(this.caloricGoal, "<--- Daily Calorie Goal");
   }
+  
+  username: String = AccountSingletonModule.username;
+  clientId: String = AccountSingletonModule.clientId.toString();
+  fname: String = AccountSingletonModule.fname;
+  lname: String = AccountSingletonModule.lname;
+  email: String = AccountSingletonModule.email;
+  caloricGoal: String = AccountSingletonModule.caloricGoal.toString();
 
-
+  /////////////////////////////////
+  exercises: ExerciseComplete[] = [];
+  account: AccountSingletonModule = new AccountSingletonModule;
+  lastWorkoutDate: String = "";
+  lastWorkoutName: String = "";
+  lastWorkoutDuration: number = 0;
+  lastWorkoutCalories: number = 0;
+  date: Date = new Date;
+  dailyCalorieGoal: String = "";
+  caloriesBurnedToday: number = 0;
   url: string = "http://localhost:8084/data/workout/getWorkouts";
-  // id:number
+
+  
   getLastWorkout(): Observable<ExerciseComplete[]> {
     return this.httpClient.get(this.url, {
       headers: {
@@ -74,34 +77,4 @@ export class AboutComponent implements OnInit {
       }
     );
   }
-
-
-  url2: String = "/account";
-  //Function for grabbing user calorie goal, and calories burned for the day 
-  getAccountInfo(): Observable<AccountSingletonModule[]> {
-    return this.httpClient.get(this.url, {
-      headers: {
-        accept: "application/json"
-      }
-    }) as Observable<AccountSingletonModule[]>;
-  }
-
- getCalorieGoal(){
-  this.getAccountInfo().subscribe(
-    (res: AccountSingletonModule[]) => {
-      // this.date = response[0];
-      // this.caloriesBurnedToday = 
-      this.dailyCalorieGoal= res[1].toString();
-      
-    }
-  );
- }
- 
-
-  // function to check how many days in a row that calories goal has been met
-  getStreakCount() {
-
-  }
-
-
 }
