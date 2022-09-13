@@ -35,8 +35,14 @@
     <br>
     <div style="position:relative; left:130px; top: -10px;">
         <button type="button" (click)="this.updateUserData()">Update info</button>
-        <!-- <input type="text" [(ngModel)]="newTodo">
-    <button (click)="addTodo()">Add Todo to List</button> for later to connect to models-->
+        <div *ngIf="this.updatedUserInfo">Account info updated</div>
+    </div>
+    <br>
+    <br>
+    <div>
+        <input type="text" name="newPass" [(ngModel)]="newPassword" placeholder="Enter new password">
+        <button type="button" (click)="this.updatePassword()">Update Password</button>
+        <div *ngIf="this.updatedUserPassword">Password updated</div>
     </div>
 
 
