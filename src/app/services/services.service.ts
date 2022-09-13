@@ -12,10 +12,12 @@ export class ServicesService {
 
   constructor(private http: HttpClient) { }
 
+  
+
   //gets all Exercises saved in the database
-  getAllExercises():Observable<ExerciseComplete[]> {
-    return this.http.get<ExerciseComplete[]>('http://localhost:4200/exercise');
-  }
+   getAllExercises():Observable<ExerciseComplete[]> {
+     return this.http.get<ExerciseComplete[]>('http://localhost:8084/data/workout/getWorkouts');
+   }
 
 
 
@@ -34,9 +36,20 @@ export class ServicesService {
   }
 
   //adds a single exercise to the database
-  addExercise(e:ExerciseComplete): Observable<ExerciseComplete> {
+  // addExercise(e:ExerciseComplete): Observable<ExerciseComplete> {
+  //   console.log(e);
+  //   return this.http.post<ExerciseComplete>('http://localhost:8084/data/workout/recordWorkout', e)
+  // }
+
+  url:string = 'http://localhost:8084/data/workout/recordWorkout';
+  addExercise(e:ExerciseComplete):Observable<ExerciseComplete>{
     console.log(e);
-    return this.http.post<ExerciseComplete>('http://localhost:4200/exercise', e)
+    return this.http.post(this.url,{
+        headers:{
+        accept:"application/json"
+      }
+    }) as Observable<ExerciseComplete>;
   }
+
 }
 

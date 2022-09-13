@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Exercise } from 'src/app/exercise';
 import { ExerciseComplete } from 'src/app/exercise-complete';
 import { ServicesService } from 'src/app/services/services.service';
-
+import { DatePipe } from '@angular/common'
 
 @Component({
   selector: 'app-exercise',
@@ -15,7 +15,7 @@ export class ExerciseComponent implements OnInit {
   activity:string = '';
   //the getExercises will return an array in Json format
   activityList:Exercise[] = [];
-  date:Date = new Date();
+  date:string = "09/13/22";
   durationInMinutes:number = 30; //default
   // this will display a list of their current exercises from the database
   chosenExercise:Exercise = <Exercise>{};  // is this how to create an empty object?o.O
@@ -27,6 +27,8 @@ export class ExerciseComponent implements OnInit {
   ngOnInit(): void {
     this.getExercises();
   }
+
+
 
   getExercises() {
     this.ss.getAllExercises().subscribe(
@@ -47,9 +49,7 @@ export class ExerciseComponent implements OnInit {
   }
  
 
- /* addDateToOExercise(chosenExercise:Exercise):void{
-    chosenExercise["date"] = ;
-  }*/
+ 
 
   //this will add the exercise to the database through the services layer
   sendExercise(chosenExercise:Exercise): void {

@@ -36,7 +36,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FoodComponent,
     ExerciseComponent,
     AccountComponent,
-    AboutComponent,    
+    AboutComponent,
 
   ],
   imports: [
