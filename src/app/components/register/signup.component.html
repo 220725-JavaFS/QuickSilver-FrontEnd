@@ -1,0 +1,60 @@
+
+<app-navbar-login></app-navbar-login>
+
+<head>
+    <style></style>
+    <title>Signup Title</title>
+    
+</head>
+
+<app-navbar-menu></app-navbar-menu>
+<div class="layout"></div>
+
+<h1 class="registration-statement">Get the most out of your workouts!</h1>
+
+<body>
+    
+    <!-- All pieces of the 'sign up' box are contained here, Required marks the boxes are needed before moving on. (Nigel)-->
+        <div class="signup-box">
+            
+            <h2>Member Registration</h2>
+            <br>
+                <form>
+                    <input type="text" name="newFName" [(ngModel)]="clientFName" class="input-box" placeholder="First Name" required>
+                    <pre></pre>
+        
+                    <input type="text" name="newLName" [(ngModel)]="clientLName" class="input-box" placeholder="Last Name" required>
+                    <pre></pre>
+
+                    <input type="email" name="newEmail" [(ngModel)]="clientEmail" class="input-box" placeholder="Email" required> 
+                    <pre></pre>
+
+                    <input type="text" name="newUsername" [(ngModel)]="clientUsername" class="input-box" placeholder="Username" required>
+                    <pre></pre>
+
+                    <input type="password" name="newPassword" [(ngModel)]="clientPassword" class="input-box" placeholder="Password" required> 
+                
+                    <pre></pre>
+                    <pre></pre>
+                    <pre></pre>
+                    <button (click)="registerUser()" class="signup-button">Register</button>
+                
+                    <p>Already have an account?</p>
+                    <p>If so, <a class="register-button" routerLinkActive="active" routerLink="/login">login instead!</a>
+                    <!-- Once again, button is bound to small text rather than huge button (Nigel)-->
+                </form>
+        </div>
+        <!-- <input type="text" [(ngModel)]="newTodo">
+    <button (click)="addTodo()">Add Todo to List</button> for later to connect to models-->
+
+
+    <div></div>
+    <br>
+    <br>
+    <br>
+
+    <div id="register-bottom"></div>
+    <!-- Trying to get the borders to reach the end of the screen (Nigel) -->
+
+
+</body>

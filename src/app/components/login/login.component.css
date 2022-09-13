@@ -3,12 +3,12 @@
   .login-box{
     width: 35%;
     height: 50%;
-    border: 1px solid black;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0.25, 0.25), 0px 4px 4px rgba(0, 0, 0.25, 0.25);
+    box-shadow: 2px 1px 4px 4px rgba(0.25, 0.25, 0.25, 0.25);
     margin: 50px 0px 50px 30%;
     padding: 30px;
     text-align: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Neue Plak UA", Helvetica,Arial,-apple-system,sans-serif;
   }
 
   .input-box{
@@ -22,7 +22,7 @@
     color:white;
     font-size: 20px;
     padding: 10px 120px;
-    font-family: 'Inter';
+    font-family: "Neue Plak UA", Helvetica,Arial,-apple-system,sans-serif;
   }
 
   .login-button:hover{
