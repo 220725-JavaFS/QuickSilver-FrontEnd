@@ -12,48 +12,39 @@
     <br>
     <br>
     <br>
-    <h2>Account Info Heading</h2>
-    <p>
-
-        sample text goes here. Sample fields below for signup.
-        sample update function below.
-
-        <br>
-        <br>
-        <br>
-        <input type="text"> First Name
-        <br>
-        <input type="text"> Last Name
-        <br>
-        <input type="text"> Email
-        <br>
-        <input type="text"> Phone
-        <br>
-        <input type="text"> Username
-        <br>
-        <input type="text"> Password
-        <br>
+    <h2>Account Info</h2>
+    <br>
+    <table>
+        <tr>
+            <td>First Name</td>
+            <td><input type="text" name="fname" [(ngModel)]="currentFName"></td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td><input type="text" name="lname" [(ngModel)]="currentLName"></td>
+        </tr>
+        <tr>
+            <td>E-Mail</td>
+            <td><input type="text" name="email" [(ngModel)]="currentEmail"></td>
+        </tr>
+        <tr>
+            <td>Calorie Goal</td>
+            <td><input type="number" name="calories" [(ngModel)]="currentCalGoal" placeholder="Add a daily calorie goal!"></td>
+        </tr>
+    </table>
+    <br>
     <div style="position:relative; left:130px; top: -10px;">
-        <button type="button">update</button>
-        <!-- <input type="text" [(ngModel)]="newTodo">
-    <button (click)="addTodo()">Add Todo to List</button> for later to connect to models-->
+        <button type="button" (click)="this.updateUserData()">Update info</button>
+        <div *ngIf="this.updatedUserInfo">Account info updated</div>
+    </div>
+    <br>
+    <br>
+    <div>
+        <input type="text" name="newPass" [(ngModel)]="newPassword" placeholder="Enter new password">
+        <button type="button" (click)="this.updatePassword()">Update Password</button>
+        <div *ngIf="this.updatedUserPassword">Password updated</div>
     </div>
 
-    <div></div>
-    <br>
-    <br>
-    <br>
-    <h2>View Account option?? 2</h2>
-    <p>
-        Sample text here. sample view all below
-        <br>
-        <br>
-        <br>
-        <a class="button" routerLinkActive="active" routerLink="/login">
-            Account details??
-        </a>
-        <!-- <input type="text" [(ngModel)]="newTodo">
-    <button (click)="addTodo()">Add Todo to List</button> for later to connect to models-->
-    </p>
+
 
 </body>
