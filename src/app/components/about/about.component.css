@@ -1,7 +1,7 @@
 .layout{
     /* border: double; */
     background-size: auto;
-    background-color: gray;
+    background-color: rgb(228, 0, 0);
   }
 
   .button{
@@ -18,3 +18,4 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 3em;
   } */
+  
