@@ -18,13 +18,13 @@ export class RegisterService {
   registerClient(fName:string, lName:string, email:string, username:string, password:string){
     let client = new Client(0, fName, lName, email, username, password);
 
-    
     this.registerNewUser(client).subscribe({
       next:(answer:Client)=>{
         this.client=answer;
         if(this.client != null){
           this.client.username = answer.username;
           this.client.id = answer.id;
+
 
           AccountSingletonModule.clientId=this.client.id;
           AccountSingletonModule.fname=fName;

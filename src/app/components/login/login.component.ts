@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   }
 
   LoginUser(){
+
       console.log("I have been called");
       this.loginService.loginClient(this.clientUsername,this.clientPassword);
       }
@@ -28,7 +29,6 @@ export class LoginComponent implements OnInit {
 
   }
 
-  
       
   export interface LoggedClientEvent{
     username: string;

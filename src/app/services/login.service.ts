@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
+
 import { HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import { Account } from '../accountDTO';
 import { map, Observable } from 'rxjs';
@@ -8,6 +9,7 @@ import { UserStatusService } from './user-status.service';
 import { AccountSingletonModule } from 'src/app/account-singleton/account-singleton.module';
 import { Client } from '../clientDTO';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +17,7 @@ export class LoginService {
 
   account:Account = <Account>{};
   $clientIsLoggedIn = new EventEmitter();
+
   $clientIsLoggedOut = new EventEmitter();
   
 
@@ -123,5 +126,3 @@ export class LoginService {
 
   
 }
-
-
