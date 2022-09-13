@@ -12,7 +12,7 @@ export class HomepageComponent implements OnInit {
   constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
-    this.checkIfUserIsLoggedIn();
+   this.checkIfUserIsLoggedIn();
   }
 
   checkIfUserIsLoggedIn(){

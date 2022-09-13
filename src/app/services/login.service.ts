@@ -37,10 +37,13 @@ export class LoginService {
         this.account=answer;
         if(this.account != null){
           AccountSingletonModule.username = answer.username;
+          console.log(AccountSingletonModule.username);
           AccountSingletonModule.accountId=answer.id;
+          console.log(AccountSingletonModule.accountId);
           AccountSingletonModule.isLoggedIn=true;
           AccountSingletonModule.clientId= answer.id;
-            this.getClientInfoByAccountId();
+          console.log(AccountSingletonModule.clientId);
+          this.getClientInfoByAccountId();
 
           this.$clientIsLoggedIn.emit(this.client);
           this.router.navigate(['homepage']);
@@ -67,8 +70,11 @@ export class LoginService {
     this.getClientInfo(id).subscribe({
       next:(resp:Client)=>{
         AccountSingletonModule.email=resp.email;
+        console.log(AccountSingletonModule.email);
         AccountSingletonModule.fname=resp.fName;
+        console.log(AccountSingletonModule.fname);
         AccountSingletonModule.lname=resp.lName;
+        console.log(AccountSingletonModule.lname);
         AccountSingletonModule.caloricGoal=-1; //TODO ADD CALORIC GOAL MATT
       }
     })
