@@ -4,6 +4,7 @@ import { AccountSingletonModule } from 'src/app/account-singleton/account-single
 import { Account } from 'src/app/accountDTO';
 import { Router } from '@angular/router';
 import { Client } from 'src/app/clientDTO';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-account',
@@ -55,10 +56,12 @@ export class AccountComponent implements OnInit {
   
 
 
+
   ngOnInit(): void {
     if(!AccountSingletonModule.isLoggedIn){
       this.router.navigate(["login"])
     }
+
   }
 
 }
