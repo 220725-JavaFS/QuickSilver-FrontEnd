@@ -7,7 +7,6 @@ export class UserStatusService {
 
   public static isLoggedIn:boolean = false;
 
-
   constructor() { 
   }
 }
