@@ -1,7 +1,7 @@
 #hyperion{
   color:white;
   text-align: center;
-  font-size: 33px;
+  font-size: 32px;
   font-family: "Neue Plak UA",Helvetica,Arial,-apple-system,sans-serif;
   text-shadow: 0px 1px 2px rgb(160, 160, 160);
   margin:0;
@@ -15,13 +15,16 @@
   width: 100%;
   padding: 0;
   margin: 0;
-  text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   position: absolute;
   top:0;
   left:0;
   font-family: "Neue Plak UA",Helvetica,Arial,-apple-system,sans-serif;
   display:block
+}
+
+.login-nav-bar{
+  text-align: center;
 }
 
 .button{
@@ -30,7 +33,7 @@
     padding: 0px 12px;
     margin: 0px;
     text-decoration: none;
-    border-left: 1px solid white;
+    border-left: 0px solid white;
   }
 
   .button2{
@@ -41,13 +44,6 @@
     border-left: 1px solid white;
   }
 
-  .button3{
-    background-color: rgb(49, 49, 49);
-    color: white;
-    padding: 0px 12px;
-    text-decoration: none;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
-  }
+
 
   
